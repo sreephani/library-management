@@ -2,19 +2,54 @@ package com.example.library_management.entity;
 
 import jakarta.persistence.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 @Table(name = "Author")//maps feilds to Author table in DB
 public class Author {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY) // Auto-increments the ID
-    private int id;
+    private int author_id;
 
-    @OneToMany
-    private String name;
+    @OneToMany(mappedBy = "author")  //one author many books
+    private List<Book> books = new ArrayList<>();
+
+    private String author_name;
 
     private String country;
 
-    private String book;
 
+    public List<Book> getBooks() {
+        return books;
+    }
+
+    public void setBooks(List<Book> books) {
+        this.books = books;
+    }
+
+    public int getAuthor_id() {
+        return author_id;
+    }
+
+    public void setAuthor_id(int author_id) {
+        this.author_id = author_id;
+    }
+
+    public String getAuthor_name() {
+        return author_name;
+    }
+
+    public void setAuthor_name(String author_name) {
+        this.author_name = author_name;
+    }
+
+    public String getCountry() {
+        return country;
+    }
+
+    public void setCountry(String country) {
+        this.country = country;
+    }
 }
