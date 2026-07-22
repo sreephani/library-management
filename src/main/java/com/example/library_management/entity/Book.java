@@ -12,11 +12,11 @@ public class Book {
 
     //https://www.baeldung.com/jpa-many-to-one
     @ManyToOne
-    @JoinColumn(name = "category_id")
+    @JoinColumn(name = "category_id") // 1 category many books
     private Category category;
 
     @ManyToOne
-    @JoinColumn(name = "author_id")
+    @JoinColumn(name = "author_id") // 1 author many books
     private Author author;
 
     private String title;

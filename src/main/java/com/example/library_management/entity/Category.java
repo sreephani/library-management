@@ -11,9 +11,9 @@ public class Category {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY) // Auto-increments the ID
-    private int category_id;
+    private Integer category_id;
 
-    @OneToMany(mappedBy = "category_name")
+    @OneToMany(mappedBy = "category_name")  // 1 category many books
     private List<Book> books = new ArrayList<>();
 
     private String category_name;
