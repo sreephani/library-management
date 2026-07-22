@@ -3,6 +3,7 @@ package com.example.library_management.service;
 
 import com.example.library_management.Dto.BookResponseDTO;
 import com.example.library_management.entity.Book;
+import com.example.library_management.exception.ResourceNotFound;
 import com.example.library_management.repository.BookRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -32,14 +33,18 @@ public class BookService {
 
         Optional<Book> books = repository.findById(bookId);
 
+        if(books.isEmpty()){
+            throw new ResourceNotFound(
+                    "Book not found with id: " + bookId);
+        }
+
         Book book = books.get();
 
         BookResponseDTO dto = new BookResponseDTO();
-
         dto.setTitle(book.getTitle());
         dto.setAuthorName(book.getAuthor_name());
         dto.setCategoryName(book.getCategory_name());
 
-       return dto;
+        return dto;
     }
 }
