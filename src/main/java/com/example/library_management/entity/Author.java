@@ -1,5 +1,8 @@
 package com.example.library_management.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 
 import java.util.ArrayList;
@@ -14,6 +17,7 @@ public class Author {
     private int author_id;
 
     @OneToMany(mappedBy = "author")  //one author many books
+    @JsonBackReference
     private List<Book> books = new ArrayList<>();
 
     private String author_name;

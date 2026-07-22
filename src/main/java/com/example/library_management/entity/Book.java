@@ -1,5 +1,7 @@
 package com.example.library_management.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 @Entity
@@ -16,7 +18,8 @@ public class Book {
     private Category category;
 
     @ManyToOne
-    @JoinColumn(name = "author_id") // 1 author many books
+    @JoinColumn(name = "author_id")// 1 author many books
+    @JsonBackReference
     private Author author;
 
     private String title;
