@@ -78,7 +78,9 @@ public class BookService {
         return repository.count();
     }
 
-
+    public List<Book> getBooksByTitle(String title) {
+        return repository.findByTitle(title);
+    }
 
 
 

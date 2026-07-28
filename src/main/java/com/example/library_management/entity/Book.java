@@ -12,7 +12,6 @@ public class Book {
     @GeneratedValue(strategy = GenerationType.IDENTITY) // Auto-increments the ID
     private int book_id;
 
-    //https://www.baeldung.com/jpa-many-to-one
     @ManyToOne
     @JoinColumn(name = "category_id") // 1 category many books
     private Category category;

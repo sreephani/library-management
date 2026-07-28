@@ -53,4 +53,10 @@ public class BookController {
         return ResponseEntity.status(HttpStatus.OK).body(bookService.getBookCount());
     }
 
+    @GetMapping("/title/{title}")
+    public ResponseEntity<List<Book>> getBooksByTitle(@PathVariable String title) {
+
+        return ResponseEntity.status(HttpStatus.OK).body(bookService.getBooksByTitle(title));
+    }
+
 }
