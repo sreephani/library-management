@@ -13,10 +13,11 @@ public class Category {
     @GeneratedValue(strategy = GenerationType.IDENTITY) // Auto-increments the ID
     private Integer category_id;
 
-    @OneToMany(mappedBy = "category_name")  // 1 category many books
+    @OneToMany(mappedBy = "categoryName")  // 1 category many books
     private List<Book> books = new ArrayList<>();
 
-    private String category_name;
+    @Column(name = "category_name")
+    private String categoryName;
 
     private String description;
 
@@ -36,12 +37,13 @@ public class Category {
         this.books = books;
     }
 
-    public String getCategory_name() {
-        return category_name;
+
+    public String getCategoryName() {
+        return categoryName;
     }
 
-    public void setCategory_name(String category_name) {
-        this.category_name = category_name;
+    public void setCategoryName(String categoryName) {
+        this.categoryName = categoryName;
     }
 
     public String getDescription() {

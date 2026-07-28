@@ -28,8 +28,8 @@ public class BookService {
         book.setPublicationYear(request.getPublicationYear());
         book.setAvailableCopies(request.getAvailableCopies());
         book.setVersion(request.getVersion());
-        book.setAuthor_name(request.getAuthor_name());
-        book.setCategory_name(request.getCategory_name());
+        book.setAuthorName(request.getAuthor_name());
+        book.setCategoryName(request.getCategory_name());
 
         Book savedBook = repository.save(book);
 
@@ -40,8 +40,8 @@ public class BookService {
         response.setPublicationYear(savedBook.getPublicationYear());
         response.setAvailableCopies(savedBook.getAvailableCopies());
         response.setVersion(savedBook.getVersion());
-        response.setAuthor_name(savedBook.getAuthor_name());
-        response.setCategory_name(savedBook.getCategory_name());
+        response.setAuthor_name(savedBook.getAuthorName());
+        response.setCategory_name(savedBook.getCategoryName());
 
         return response;
 
@@ -60,8 +60,8 @@ public class BookService {
 
         BookResponseDTO dto = new BookResponseDTO();
         dto.setTitle(book.getTitle());
-        dto.setAuthorName(book.getAuthor_name());
-        dto.setCategoryName(book.getCategory_name());
+        dto.setAuthorName(book.getAuthorName());
+        dto.setCategoryName(book.getCategoryName());
 
         return dto;
     }
@@ -80,6 +80,26 @@ public class BookService {
 
     public List<Book> getBooksByTitle(String title) {
         return repository.findByTitle(title);
+    }
+
+    public List<Book> getBooksByTitleContaining(String keyword){
+        return repository.findByTitleContaining(keyword);
+    }
+
+    public List<Book> getBooksByTitlePrefix(String prefix){
+        return repository.findByTitleStartingWith(prefix);
+    }
+
+    public List<Book> getBooksByAuthorName(String authorName){
+        return repository.findByAuthorAuthorName(authorName);
+    }
+
+    public List<Book> getBooksByCategoryName(String categoryName){
+        return repository.findByCategoryCategoryName(categoryName);
+    }
+
+    public List<Book> getBooksByAvailableCopiesGreaterThan(int copies){
+        return repository.findByAvailableCopiesGreaterThan(copies);
     }
 
 

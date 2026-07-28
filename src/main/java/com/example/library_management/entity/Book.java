@@ -25,15 +25,19 @@ public class Book {
 
     private String isbn;
 
+    @Column(name = "publication_year")
     private long publicationYear;
 
+    @Column(name = "available_copies")
     private int availableCopies;
 
     private String version;
 
-    private String author_name;
+    @Column(name = "author_name")
+    private String authorName;
 
-    private String category_name;
+    @Column(name = "category_name")
+    private String categoryName;
 
 
     public int getBook_id() {
@@ -100,19 +104,19 @@ public class Book {
         this.version = version;
     }
 
-    public String getAuthor_name() {
-        return author_name;
+    public String getAuthorName() {
+        return authorName;
     }
 
-    public void setAuthor_name(String author_name) {
-        this.author_name = author_name;
+    public void setAuthorName(String authorName) {
+        this.authorName = authorName;
     }
 
-    public String getCategory_name() {
-        return category_name;
+    public String getCategoryName() {
+        return categoryName;
     }
 
-    public void setCategory_name(String category_name) {
-        this.category_name = category_name;
+    public void setCategoryName(String categoryName) {
+        this.categoryName = categoryName;
     }
 }

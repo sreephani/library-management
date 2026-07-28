@@ -20,7 +20,8 @@ public class Author {
     @JsonBackReference
     private List<Book> books = new ArrayList<>();
 
-    private String author_name;
+    @Column(name = "author_name")
+    private String authorName;
 
     private String country;
 
@@ -41,12 +42,13 @@ public class Author {
         this.author_id = author_id;
     }
 
-    public String getAuthor_name() {
-        return author_name;
+
+    public String getAuthorName() {
+        return authorName;
     }
 
-    public void setAuthor_name(String author_name) {
-        this.author_name = author_name;
+    public void setAuthorName(String authorName) {
+        this.authorName = authorName;
     }
 
     public String getCountry() {
