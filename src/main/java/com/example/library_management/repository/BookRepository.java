@@ -13,4 +13,5 @@ import java.util.List;
 // standard data access
 @Repository
 public interface BookRepository extends JpaRepository<Book, Integer> {
+    
 }
