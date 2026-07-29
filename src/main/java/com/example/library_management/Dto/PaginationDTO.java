@@ -1,28 +1,32 @@
 package com.example.library_management.Dto;
 
+import org.springframework.data.domain.Sort;
+
 import java.util.List;
 
 public class PaginationDTO<T> {
 
-    private List<T> content;
+    private List<BookResponseDTO> content;
+    private List<SortDTO> sort;
     private int pageNumber;
     private int pageSize;
     private long totalElements;
     private int totalPages;
 
-    public PaginationDTO(List<T> content, int pageNumber, int pageSize, long totalElements, int totalPages) {
+    public PaginationDTO(List<BookResponseDTO> content, List<SortDTO> sort, int pageNumber, int pageSize, long totalElements, int totalPages) {
         this.content = content;
+        this.sort = sort;
         this.pageNumber = pageNumber;
         this.pageSize = pageSize;
         this.totalElements = totalElements;
         this.totalPages = totalPages;
     }
 
-    public List<T> getContent() {
+    public List<BookResponseDTO> getContent() {
         return content;
     }
 
-    public void setContent(List<T> content) {
+    public void setContent(List<BookResponseDTO> content) {
         this.content = content;
     }
 
@@ -56,5 +60,13 @@ public class PaginationDTO<T> {
 
     public void setTotalPages(int totalPages) {
         this.totalPages = totalPages;
+    }
+
+    public List<SortDTO> getSort() {
+        return sort;
+    }
+
+    public void setSort(List<SortDTO> sort) {
+        this.sort = sort;
     }
 }

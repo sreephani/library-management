@@ -101,7 +101,7 @@ public class BookController {
     }
 
     @GetMapping("/search")
-    public ResponseEntity<PaginationDTO<Book>> getSearchBooks(@ModelAttribute SearchDTO search, Pageable pageable) {
+    public ResponseEntity<PaginationDTO<BookResponseDTO>> getSearchBooks(@ModelAttribute SearchDTO search, Pageable pageable) {
 
         return ResponseEntity.status(HttpStatus.OK).body(bookService.getSearchBooks(search, pageable));
     }

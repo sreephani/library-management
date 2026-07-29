@@ -1,10 +1,7 @@
 package com.example.library_management.service;
 
 
-import com.example.library_management.Dto.BookResponseDTO;
-import com.example.library_management.Dto.NewBookDTO;
-import com.example.library_management.Dto.PaginationDTO;
-import com.example.library_management.Dto.SearchDTO;
+import com.example.library_management.Dto.*;
 import com.example.library_management.entity.Book;
 import com.example.library_management.exception.ResourceNotFound;
 import com.example.library_management.repository.BookRepository;
@@ -12,9 +9,11 @@ import com.example.library_management.specification.BookSpecification;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -111,20 +110,42 @@ public class BookService {
         return repository.findByPublicationYearGreaterThan(year);
     }
 
-    public PaginationDTO<Book> getSearchBooks(SearchDTO bookSearch, Pageable pageable) {
+    public PaginationDTO<BookResponseDTO> getSearchBooks(SearchDTO bookSearch, Pageable pageable) {
 
         BookSpecification specification = new BookSpecification(bookSearch);
 
         Page<Book> books =
                 repository.findAll(specification, pageable);
 
+        List<BookResponseDTO> bookResponse = new ArrayList<>();
+        for(Book book: books.getContent()){
+
+            BookResponseDTO bookResponseDTO = new BookResponseDTO();
+            bookResponseDTO.setTitle(book.getTitle());
+            bookResponseDTO.setAuthorName(book.getAuthorName());
+            bookResponseDTO.setCategoryName(book.getCategoryName());
+
+            bookResponse.add(bookResponseDTO);
+        }
+
+        List<SortDTO> sortList = new ArrayList<>();
+        for(Sort.Order sort : books.getSort()){
+
+            SortDTO sortDTO = new SortDTO();
+            sortDTO.setProperty(sort.getProperty());
+            sortDTO.setDirection(sort.getDirection());
+
+            sortList.add(sortDTO);
+        }
+
 
         return new PaginationDTO<>(
-                books.getContent(),
-                books.getNumber(),
+                bookResponse,
+                sortList,
+                books.getTotalPages(),
+                (int) books.getTotalElements(),
                 books.getSize(),
-                books.getTotalElements(),
-                books.getTotalPages()
+                books.getNumber()
         );
     }
 
