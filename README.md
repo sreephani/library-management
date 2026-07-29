@@ -23,7 +23,7 @@ A Spring Boot REST API for managing books, authors, and categories using Java, S
   - JPQL
   - Native SQL
 - Dynamic search using JPA Specification
-- Pagination and sorting
+- Pagination and default sorting(only ascending)
 - Validation and global exception handling
 - Swagger API documentation
 
