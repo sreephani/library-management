@@ -35,7 +35,7 @@ Supports searching books by:
 - Author
 - Category
 - Publication year
-- Available copies
+- isbn
 
 Example:
 
