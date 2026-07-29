@@ -47,6 +47,7 @@ entity
 dto
 specification
 exception
+config
 
 
 ## Swagger UI
@@ -56,11 +57,8 @@ http://localhost:8080/swagger-ui/index.html
 ## Future Enhancements
 
 - Spring Security with JWT Authentication
-- Role-based authorization (Admin/User)
 - Unit testing with JUnit and Mockito
-- Docker containerization
-- CI/CD pipeline integration
-- AWS cloud deployment
+
 
 
 
