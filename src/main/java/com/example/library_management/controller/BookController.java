@@ -76,17 +76,6 @@ public class BookController {
         return ResponseEntity.status(HttpStatus.OK).body(bookService.getBooksByTitlePrefix(prefix));
     }
 
-    @GetMapping("/title-author")
-    public ResponseEntity<List<Book>> getBooksByAuthorName(@RequestParam String authorName) {
-
-        return ResponseEntity.status(HttpStatus.OK).body(bookService.getBooksByAuthorName(authorName));
-    }
-
-    @GetMapping("/title-category")
-    public ResponseEntity<List<Book>> getBooksByCategoryName(@RequestParam String categoryName) {
-
-        return ResponseEntity.status(HttpStatus.OK).body(bookService.getBooksByCategoryName(categoryName));
-    }
 
     @GetMapping("/title-copies")
     public ResponseEntity<List<Book>> getBooksByAvailableCopiesGreaterThan(@RequestParam int copies) {

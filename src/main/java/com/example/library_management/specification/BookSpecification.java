@@ -41,6 +41,34 @@ public class BookSpecification implements Specification<Book> {
             ));
         }
 
+        if (bookSearch.getIsbn() != null) {
+            predicate.add(cb.like(
+                    root.get("isbn"),
+                    "%" + bookSearch.getIsbn() + "%"
+            ));
+        }
+
+        if (bookSearch.getPublicationYear() != null) {
+            predicate.add(cb.like(
+                    root.get("publicationYear"),
+                    "%" + bookSearch.getPublicationYear() + "%"
+            ));
+        }
+
+        if (bookSearch.getIsbn() != null) {
+            predicate.add(cb.like(
+                    root.get("isbn"),
+                    "%" + bookSearch.getIsbn() + "%"
+            ));
+        }
+
+        if (bookSearch.getCategoryName() != null) {
+            predicate.add(cb.like(
+                    root.get("categoryName"),
+                    "%" + bookSearch.getCategoryName() + "%"
+            ));
+        }
+
         return cb.and(predicate.toArray(new Predicate[0]));
 
     }

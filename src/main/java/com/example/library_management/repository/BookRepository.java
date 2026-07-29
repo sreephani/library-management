@@ -16,12 +16,6 @@ public interface BookRepository extends JpaRepository<Book, Integer>, JpaSpecifi
 
     List<Book> findByTitle(String title);
 
-    List<Book> findByIsbn(String isbn);
-
-    List<Book> findByPublicationYear(long publicationYear);
-
-    List<Book> findByAvailableCopies(int availableCopies);
-
     List<Book> findByTitleContaining(String keyword);
 
     List<Book> findByTitleStartingWith(String prefix);
@@ -41,14 +35,5 @@ public interface BookRepository extends JpaRepository<Book, Integer>, JpaSpecifi
 
     @Query("select bk from Book bk where bk.availableCopies < :copies")
     List<Book> findByAvailableCopiesLessThan(int copies);
-
-    List<Book> findByAuthorAuthorName(String authorName);
-
-    List<Book> findByCategoryCategoryName(String categoryName);
-
-    Page<Book> findAll(
-            Specification<Book> specification,
-            Pageable pageable
-    );
 
 }

@@ -83,23 +83,32 @@ public class BookService {
     }
 
     public List<Book> getBooksByTitle(String title) {
-        return repository.findByTitle(title);
+
+        List<Book> books = repository.findByTitle(title);
+
+        if (books.isEmpty()) {
+            throw new ResourceNotFound(
+                    "Book with title not found: " + title);
+        }
+
+        return books;
+
     }
 
     public List<Book> getBooksByTitleContaining(String keyword){
-        return repository.findByTitleContaining(keyword);
+
+        List<Book> books = repository.findByTitleContaining(keyword);
+
+        if (books.isEmpty()) {
+            throw new ResourceNotFound(
+                    "Book with keyword not found: " + keyword);
+        }
+
+        return books;
     }
 
     public List<Book> getBooksByTitlePrefix(String prefix){
         return repository.findByTitleStartingWith(prefix);
-    }
-
-    public List<Book> getBooksByAuthorName(String authorName){
-        return repository.findByAuthorAuthorName(authorName);
-    }
-
-    public List<Book> getBooksByCategoryName(String categoryName){
-        return repository.findByCategoryCategoryName(categoryName);
     }
 
     public List<Book> getBooksByAvailableCopiesGreaterThan(int copies){
@@ -136,8 +145,8 @@ public class BookService {
             sortDTO.setDirection(sort.getDirection());
 
             sortList.add(sortDTO);
-        }
 
+        }
 
         return new PaginationDTO<>(
                 bookResponse,
@@ -149,5 +158,6 @@ public class BookService {
         );
     }
 
-
 }
+
+
