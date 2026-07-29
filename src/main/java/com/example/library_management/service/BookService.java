@@ -108,8 +108,17 @@ public class BookService {
     }
 
     public List<Book> getBooksByTitlePrefix(String prefix){
-        return repository.findByTitleStartingWith(prefix);
+
+        List<Book> books = repository.findByTitleStartingWith(prefix);
+
+        if (books.isEmpty()) {
+            throw new ResourceNotFound(
+                    "Book with prefix not found: " + prefix);
+        }
+
+        return books;
     }
+
 
     public List<Book> getBooksByAvailableCopiesGreaterThan(int copies){
         return repository.findByAvailableCopiesGreaterThan(copies);
@@ -125,6 +134,10 @@ public class BookService {
 
         Page<Book> books =
                 repository.findAll(specification, pageable);
+
+        if (books.isEmpty()) {
+            throw new ResourceNotFound("No books found matching the search criteria.");
+        }
 
         List<BookResponseDTO> bookResponse = new ArrayList<>();
         for(Book book: books.getContent()){
