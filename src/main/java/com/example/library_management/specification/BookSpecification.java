@@ -55,12 +55,6 @@ public class BookSpecification implements Specification<Book> {
             ));
         }
 
-        if (bookSearch.getIsbn() != null) {
-            predicate.add(cb.like(
-                    root.get("isbn"),
-                    "%" + bookSearch.getIsbn() + "%"
-            ));
-        }
 
         if (bookSearch.getCategoryName() != null) {
             predicate.add(cb.like(
