@@ -2,6 +2,7 @@ package com.example.library_management.controller;
 
 import com.example.library_management.Dto.BookResponseDTO;
 import com.example.library_management.Dto.NewBookDTO;
+import com.example.library_management.Dto.SearchDTO;
 import com.example.library_management.entity.Book;
 import com.example.library_management.service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -90,6 +91,16 @@ public class BookController {
         return ResponseEntity.status(HttpStatus.OK).body(bookService.getBooksByAvailableCopiesGreaterThan(copies));
     }
 
+    @GetMapping("/title-publicationYear")
+    public ResponseEntity<List<Book>> getBooksByPublicationYearGreaterThan(@RequestParam long year) {
 
+        return ResponseEntity.status(HttpStatus.OK).body(bookService.getBooksByPublicationYearGreaterThan(year));
+    }
+
+    @GetMapping("/search")
+    public ResponseEntity<List<Book>> getSearchBooks(@ModelAttribute SearchDTO search) {
+
+        return ResponseEntity.status(HttpStatus.OK).body(bookService.getSearchBooks(search));
+    }
 
 }

@@ -3,9 +3,11 @@ package com.example.library_management.service;
 
 import com.example.library_management.Dto.BookResponseDTO;
 import com.example.library_management.Dto.NewBookDTO;
+import com.example.library_management.Dto.SearchDTO;
 import com.example.library_management.entity.Book;
 import com.example.library_management.exception.ResourceNotFound;
 import com.example.library_management.repository.BookRepository;
+import com.example.library_management.specification.BookSpecification;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -102,7 +104,16 @@ public class BookService {
         return repository.findByAvailableCopiesGreaterThan(copies);
     }
 
+    public List<Book> getBooksByPublicationYearGreaterThan(long year){
+        return repository.findByPublicationYearGreaterThan(year);
+    }
 
+    public List<Book> getSearchBooks(SearchDTO bookSearch) {
+
+        BookSpecification specification = new BookSpecification(bookSearch);
+
+        return repository.findAll(specification);
+    }
 
 
 }
