@@ -1,0 +1,67 @@
+# Library Management System
+
+A Spring Boot REST API for managing books, authors, and categories using Java, Spring Data JPA, Hibernate, and MySQL.
+
+## Tech Stack
+
+- Java 17
+- Spring Boot
+- Spring Data JPA / Hibernate
+- MySQL
+- Maven
+- Swagger OpenAPI
+
+## Features
+
+- CRUD operations for books
+- JPA entity relationships
+  - Author → Books
+  - Category → Books
+- DTO-based request and response handling
+- Spring Data JPA queries
+  - Derived queries
+  - JPQL
+  - Native SQL
+- Dynamic search using JPA Specification
+- Pagination and sorting
+- Validation and global exception handling
+- Swagger API documentation
+
+## Search Features
+
+Supports searching books by:
+
+- Title
+- Author
+- Category
+- Publication year
+- Available copies
+
+Example:
+
+## Project Structure
+controller
+service
+repository
+entity
+dto
+specification
+exception
+
+
+## Swagger UI
+http://localhost:8080/swagger-ui/index.html
+
+
+## Future Enhancements
+
+- Spring Security with JWT Authentication
+- Role-based authorization (Admin/User)
+- Unit testing with JUnit and Mockito
+- Docker containerization
+- CI/CD pipeline integration
+- AWS cloud deployment
+
+
+
+
