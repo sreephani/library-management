@@ -37,7 +37,6 @@ Supports searching books by:
 - Publication year
 - isbn
 
-Example:
 
 ## Project Structure
 controller
