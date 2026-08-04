@@ -60,8 +60,11 @@ http://localhost:8080/swagger-ui/index.html
 
 ## externalURLS
 https://www.baeldung.com/hibernate-one-to-many
+
 https://docs.spring.io/spring-data/jpa/reference/jpa/query-methods.html
+
 https://github.com/harman-04/spring-data-jpa-criteria-specifications
+
 https://github.com/AhmetAksunger/Jpa-Specifications-Example/blob/main/jpaspecifications/src/main/java/com/ahmetaksunger/jpaspecifications/specification/ProductSpecification.java
 
 
