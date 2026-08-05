@@ -71,6 +71,8 @@ https://www.baeldung.com/spring-data-criteria-queries
 
 https://medium.com/devxtalks/implementing-pagination-sorting-and-filtering-in-spring-boot-42615dbd74a7
 
+used dbschema 10.4.1 and spring boot to visually ER diagrams
+
 
 
 
