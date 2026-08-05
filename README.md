@@ -67,6 +67,8 @@ https://github.com/harman-04/spring-data-jpa-criteria-specifications
 
 https://github.com/AhmetAksunger/Jpa-Specifications-Example/blob/main/jpaspecifications/src/main/java/com/ahmetaksunger/jpaspecifications/specification/ProductSpecification.java
 
+https://www.baeldung.com/spring-data-criteria-queries
+
 
 
 
