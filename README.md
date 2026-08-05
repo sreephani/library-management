@@ -69,6 +69,8 @@ https://github.com/AhmetAksunger/Jpa-Specifications-Example/blob/main/jpaspecifi
 
 https://www.baeldung.com/spring-data-criteria-queries
 
+https://medium.com/devxtalks/implementing-pagination-sorting-and-filtering-in-spring-boot-42615dbd74a7
+
 
 
 
