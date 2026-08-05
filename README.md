@@ -77,6 +77,8 @@ https://medium.com/spring-boot-world/dynamically-querying-with-jpa-specification
 
 https://www.bezkoder.com/spring-boot-swagger-3/
 
+https://medium.com/@anandjeyaseelan10/spring-boot-project-structure-explained-best-practices-c2ba46ea57eb
+
 used dbschema 10.4.1 and spring boot to visualize ER diagrams
 
 
