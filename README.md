@@ -75,6 +75,8 @@ https://medium.com/devxtalks/implementing-pagination-sorting-and-filtering-in-sp
 
 https://medium.com/spring-boot-world/dynamically-querying-with-jpa-specification-ec5c41fff5d6
 
+https://www.bezkoder.com/spring-boot-swagger-3/
+
 used dbschema 10.4.1 and spring boot to visualize ER diagrams
 
 
