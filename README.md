@@ -61,6 +61,8 @@ http://localhost:8080/swagger-ui/index.html
 ## externalURLS
 https://www.baeldung.com/hibernate-one-to-many
 
+https://www.geeksforgeeks.org/sql/relationships-in-sql-one-to-one-one-to-many-many-to-many/
+
 https://docs.spring.io/spring-data/jpa/reference/jpa/query-methods.html
 
 https://github.com/harman-04/spring-data-jpa-criteria-specifications
