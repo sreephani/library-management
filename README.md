@@ -79,6 +79,8 @@ https://www.bezkoder.com/spring-boot-swagger-3/
 
 https://medium.com/@anandjeyaseelan10/spring-boot-project-structure-explained-best-practices-c2ba46ea57eb
 
+https://codesignal.com/learn/courses/advanced-restful-techniques-in-spring-boot/lessons/exception-handling-in-spring-boot
+
 used dbschema 10.4.1 and spring boot to visualize ER diagrams
 
 
